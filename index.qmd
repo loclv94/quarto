@@ -1,0 +1,88 @@
+---
+title: "Welcome"
+page-layout: full
+include-after-body: footer-includes.html
+---
+
+::: {.hero style="background: linear-gradient(135deg, rgba(0, 85, 204, 0.9), rgba(0, 61, 153, 0.9)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1920&h=1080&fit=crop&crop=center') center/cover;"}
+# Welcome to My Professional Portfolio
+
+Discover insights, presentations, and expertise in data science, analytics, and business intelligence. Explore interactive presentations and learn about my professional journey.
+
+<button class="btn btn-primary btn-lg" data-presentation="slides.html" style="background: rgba(255,255,255,0.2); border: 2px solid white; color: white; backdrop-filter: blur(10px);">
+  <i class="bi bi-play-circle"></i> View Sample Presentation
+</button>
+:::
+
+::: {.container-fluid .mt-5}
+::: {.row .justify-content-center}
+::: {.col-lg-8}
+
+## What You'll Find Here
+
+::: {.row .mt-4}
+::: {.col-md-4 .mb-4}
+::: {.card .h-100 style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none;"}
+::: {.card-body .text-center style="padding: 2rem;"}
+::: {style="font-size: 3rem; margin-bottom: 1rem;"}
+📊
+:::
+### Presentations
+Interactive slide decks covering various topics in data science, analytics, and business insights.
+:::
+:::
+:::
+
+::: {.col-md-4 .mb-4}
+::: {.card .h-100 style="background: linear-gradient(135deg, #f093fb, #f5576c); color: white; border: none;"}
+::: {.card-body .text-center style="padding: 2rem;"}
+::: {style="font-size: 3rem; margin-bottom: 1rem;"}
+💼
+:::
+### Professional Work
+Examples of projects, case studies, and professional accomplishments.
+:::
+:::
+:::
+
+::: {.col-md-4 .mb-4}
+::: {.card .h-100 style="background: linear-gradient(135deg, #4facfe, #00f2fe); color: white; border: none;"}
+::: {.card-body .text-center style="padding: 2rem;"}
+::: {style="font-size: 3rem; margin-bottom: 1rem;"}
+🎯
+:::
+### Expertise
+Deep dive into areas of specialization and technical skills.
+:::
+:::
+:::
+:::
+
+## Featured Content
+
+::: {.presentation-item}
+::: {.presentation-title}
+### Sample Business Presentation
+:::
+A comprehensive overview of key business metrics and strategic insights. This presentation demonstrates modern slide design and interactive elements.
+
+<button class="btn btn-primary mt-3" data-presentation="slides.html">
+  View Presentation
+</button>
+:::
+
+## Get Started
+
+Navigate through the site using the menu above to explore different sections:
+
+- **About**: Learn more about my background and expertise
+- **Presentations**: Browse the complete collection of slide decks
+- **GitHub**: Access the source code and contribute
+
+---
+
+*This portfolio is built with [Quarto](https://quarto.org) and features interactive [Reveal.js](https://revealjs.com) presentations.*
+
+:::
+:::
+:::

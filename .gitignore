@@ -1,0 +1,29 @@
+# Quarto output
+_site/
+/.quarto/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.log
+
+# Node modules (if using npm packages)
+node_modules/
+
+# Python virtual environments
+venv/
+env/
+.env
+
+# R files
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata

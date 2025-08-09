@@ -1,0 +1,124 @@
+---
+title: "Presentations"
+include-after-body: footer-includes.html
+---
+
+::: {.container-fluid .mt-4}
+::: {.row .justify-content-center}
+::: {.col-lg-10}
+
+## Interactive Presentations
+
+Explore my collection of professional presentations covering various topics in data science, analytics, and business intelligence. Each presentation is designed to be engaging, informative, and actionable.
+
+### Featured Presentations
+
+::: {.presentation-item style="background: linear-gradient(135deg, rgba(0, 85, 204, 0.05), rgba(255, 255, 255, 0.95)); border-left: 4px solid #0055cc;"}
+::: {.row .align-items-center}
+::: {.col-md-3 .text-center}
+::: {style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 2rem; border-radius: 15px; box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3);"}
+::: {style="font-size: 3rem; margin-bottom: 0.5rem;"}
+📊
+:::
+**Featured**
+:::
+:::
+
+::: {.col-md-9}
+::: {.presentation-title}
+#### Business Analytics Overview
+:::
+**Duration:** 15 minutes | **Level:** Intermediate | **Topics:** Analytics, KPIs, Strategy
+
+A comprehensive introduction to business analytics, covering key performance indicators, data visualization best practices, and strategic decision-making frameworks. Perfect for stakeholders looking to understand the value of data-driven approaches.
+
+**Key Takeaways:**
+- Understanding business metrics that matter
+- Building effective dashboards
+- Translating data into actionable insights
+- Modern visualization techniques
+
+<button class="btn btn-primary" data-presentation="slides.html" style="margin-top: 1rem;">
+  <i class="bi bi-play-circle"></i> View Presentation
+</button>
+:::
+:::
+:::
+
+::: {.presentation-item}
+::: {.presentation-title}
+#### Data Visualization Best Practices
+:::
+**Duration:** 20 minutes | **Level:** Beginner to Intermediate | **Topics:** Visualization, Design, Communication
+
+*Coming Soon* - An in-depth look at creating compelling data visualizations that tell a story and drive action. This presentation covers design principles, tool selection, and common pitfalls to avoid.
+
+<button class="btn btn-outline-primary" disabled>
+  <i class="bi bi-clock"></i> Coming Soon
+</button>
+:::
+
+::: {.presentation-item}
+::: {.presentation-title}
+#### Machine Learning for Business
+:::
+**Duration:** 25 minutes | **Level:** Intermediate to Advanced | **Topics:** ML, AI, Business Applications
+
+*Coming Soon* - Practical applications of machine learning in business contexts, including use case identification, model selection, and implementation strategies.
+
+<button class="btn btn-outline-primary" disabled>
+  <i class="bi bi-clock"></i> Coming Soon
+</button>
+:::
+
+### Presentation Features
+
+::: {.row .mt-5}
+::: {.col-md-4 .mb-3}
+::: {.card .text-center}
+::: {.card-body}
+#### 🎯 Interactive
+Navigate through slides at your own pace with keyboard controls and click navigation.
+:::
+:::
+:::
+
+::: {.col-md-4 .mb-3}
+::: {.card .text-center}
+::: {.card-body}
+#### 📱 Responsive
+Presentations work seamlessly across desktop, tablet, and mobile devices.
+:::
+:::
+:::
+
+::: {.col-md-4 .mb-3}
+::: {.card .text-center}
+::: {.card-body}
+#### 🎨 Professional
+Clean, modern design with consistent branding and typography.
+:::
+:::
+:::
+:::
+
+## How to Navigate
+
+- **Keyboard Controls:** Use arrow keys, space bar, or click to navigate
+- **Fullscreen:** Press 'F' for fullscreen mode
+- **Overview:** Press 'Esc' to see slide overview
+- **Speaker Notes:** Press 'S' to open speaker view (if available)
+
+## Request a Custom Presentation
+
+Interested in a presentation on a specific topic? I create custom presentations tailored to your audience and objectives.
+
+<div class="text-center mt-4">
+<button class="btn btn-outline-primary btn-lg">
+  <i class="bi bi-envelope"></i> Contact for Custom Work
+</button>
+</div>
+
+:::
+:::
+:::

@@ -1,0 +1,146 @@
+/*-- scss:defaults --*/
+
+// Import Inter font
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+// Color variables
+$primary-color: #0055cc;
+$primary-hover: #003d99;
+$text-color: #333;
+$light-bg: #f8f9fa;
+$white: #ffffff;
+
+// Typography
+$font-family-sans-serif: 'Inter', sans-serif;
+$presentation-heading-font: 'Inter', sans-serif;
+
+// Theme variables
+$body-bg: $white;
+$body-color: $text-color;
+$link-color: $primary-color;
+$presentation-heading-color: $primary-color;
+
+/*-- scss:rules --*/
+
+.reveal {
+  font-family: $font-family-sans-serif;
+  
+  .slides {
+    text-align: left;
+  }
+  
+  .title-slide {
+    text-align: center;
+    
+    h1, h2, h3 {
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $presentation-heading-font;
+    font-weight: 600;
+    color: $presentation-heading-color;
+    margin-bottom: 0.5em;
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+  }
+  
+  h2 {
+    font-size: 2em;
+    font-weight: 600;
+  }
+  
+  h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+  }
+  
+  p {
+    margin-bottom: 1em;
+    line-height: 1.6;
+  }
+  
+  .fragment {
+    transition: all 0.3s ease;
+  }
+  
+  .columns {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+  
+  .column {
+    flex: 1;
+  }
+  
+  blockquote {
+    background: $light-bg;
+    border-left: 4px solid $primary-color;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+    border-radius: 4px;
+    font-style: italic;
+    
+    p {
+      margin: 0;
+    }
+  }
+  
+  ul, ol {
+    margin-left: 1em;
+    
+    li {
+      margin-bottom: 0.5em;
+    }
+  }
+  
+  .incremental > * {
+    opacity: 0.3;
+    
+    &.current-fragment {
+      opacity: 1;
+    }
+  }
+}
+
+// Progress bar
+.reveal .progress {
+  color: $primary-color;
+  height: 4px;
+}
+
+// Controls
+.reveal .controls {
+  color: $primary-color;
+  
+  button {
+    transition: all 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+// Slide backgrounds
+.reveal .slide-background {
+  &.present {
+    opacity: 1;
+  }
+}
+
+// Custom slide styling
+.reveal .slides section {
+  padding: 2rem;
+  
+  &[data-background-color] {
+    h1, h2, h3, h4, h5, h6 {
+      color: inherit;
+    }
+  }
+}

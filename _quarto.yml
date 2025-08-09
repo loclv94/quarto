@@ -1,0 +1,31 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Professional Portfolio"
+  navbar:
+    background: "#0055cc"
+    foreground: white
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - href: presentations.qmd
+        text: Presentations
+    tools:
+      - icon: github
+        href: https://github.com
+        text: "GitHub"
+
+format:
+  html:
+    theme:
+      - bootstrap
+      - styles.scss
+    toc: false
+    page-layout: full
+
+execute:
+  freeze: auto

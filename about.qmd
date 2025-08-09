@@ -1,0 +1,94 @@
+---
+title: "About Me"
+---
+
+::: {.container-fluid .mt-4}
+::: {.row .justify-content-center}
+::: {.col-lg-8}
+
+::: {style="background: linear-gradient(135deg, rgba(0, 85, 204, 0.05), rgba(255, 255, 255, 0.95)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&h=600&fit=crop&crop=center') center/cover; padding: 3rem; border-radius: 15px; margin-bottom: 2rem; text-align: center;"}
+## Professional Background
+
+::: {style="background: rgba(255,255,255,0.9); padding: 2rem; border-radius: 10px; box-shadow: 0 8px 32px rgba(0,0,0,0.1); backdrop-filter: blur(10px);"}
+Welcome to my professional portfolio. I am a data scientist and analytics professional with expertise in transforming complex data into actionable business insights.
+:::
+:::
+
+### Areas of Expertise
+
+::: {.row .mt-4}
+::: {.col-md-6 .mb-4}
+::: {.card style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none;"}
+::: {.card-body}
+#### 📈 Data Analytics
+- Statistical analysis and modeling
+- Business intelligence and reporting
+- Performance metrics and KPIs
+- Predictive analytics
+:::
+:::
+:::
+
+::: {.col-md-6 .mb-4}
+::: {.card style="background: linear-gradient(135deg, #f093fb, #f5576c); color: white; border: none;"}
+::: {.card-body}
+#### 🛠️ Technical Skills
+- Python, R, SQL
+- Tableau, Power BI
+- Machine Learning
+- Cloud platforms (AWS, Azure)
+:::
+:::
+:::
+
+::: {.col-md-6 .mb-4}
+::: {.card style="background: linear-gradient(135deg, #4facfe, #00f2fe); color: white; border: none;"}
+::: {.card-body}
+#### 💼 Business Acumen
+- Strategic planning
+- Stakeholder communication
+- Project management
+- Cross-functional collaboration
+:::
+:::
+:::
+
+::: {.col-md-6 .mb-4}
+::: {.card style="background: linear-gradient(135deg, #43e97b, #38f9d7); color: white; border: none;"}
+::: {.card-body}
+#### 🎯 Specializations
+- Customer analytics
+- Financial modeling
+- Operations optimization
+- Market research
+:::
+:::
+:::
+:::
+
+## Professional Philosophy
+
+I believe in the power of data to drive meaningful business decisions. My approach combines technical expertise with strong business acumen to deliver solutions that not only solve immediate problems but also provide long-term strategic value.
+
+### Key Principles
+
+- **Data-Driven Decision Making**: Every recommendation is backed by solid analytical evidence
+- **Clear Communication**: Complex insights presented in accessible, actionable formats
+- **Continuous Learning**: Staying current with industry trends and emerging technologies
+- **Collaborative Approach**: Working closely with stakeholders to understand business needs
+
+## Education & Certifications
+
+*This section would typically include your educational background, professional certifications, and relevant training.*
+
+## Contact
+
+Feel free to connect with me to discuss potential collaborations, consulting opportunities, or to learn more about my work.
+
+---
+
+*This portfolio showcases my commitment to excellence in data science and analytics. Each presentation and project reflects my dedication to delivering high-quality, impactful solutions.*
+
+:::
+:::
+:::
