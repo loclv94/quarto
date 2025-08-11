@@ -1,0 +1,212 @@
+[
+  {
+    "objectID": "BEST_PRACTICES.html",
+    "href": "BEST_PRACTICES.html",
+    "title": "Best Practices for Maintaining a Quarto Website",
+    "section": "",
+    "text": "This document outlines essential best practices for maintaining and scaling your Quarto website with integrated Reveal.js presentations.\n\n\n\n\nproject/\n├── _quarto.yml           # Main configuration\n├── index.qmd            # Homepage\n├── about.qmd            # About page\n├── presentations.qmd    # Presentations listing\n├── slides/              # Presentation directory\n│   ├── slides.qmd       # Main presentation\n│   ├── presentation-2.qmd\n│   └── assets/          # Slide-specific assets\n├── assets/              # Global assets\n│   ├── images/\n│   └── data/\n├── styles.css           # Global styles\n├── modal.js            # Modal functionality\n└── _site/              # Generated output (git-ignored)\n\n\n\n\nOne presentation per .qmd file in the slides directory\nUse descriptive filenames: data-visualization-2024.qmd\nKeep slide assets in dedicated subdirectories\nMaintain consistent naming conventions\n\n\n\n\n\nWrite clear, concise slide titles\nLimit bullet points to 5-7 items per slide\nUse consistent formatting across presentations\nInclude speaker notes for complex slides\n\n\n\n\n\n\n\n# Initialize repository\ngit init\ngit add .\ngit commit -m \"Initial Quarto website setup\"\n\n# Connect to GitHub\ngit remote add origin https://github.com/username/portfolio.git\ngit push -u origin main\n\n\n\n# Quarto output\n_site/\n/.quarto/\n\n# OS files\n.DS_Store\nThumbs.db\n\n# IDE files\n.vscode/\n.idea/\n\n# Temporary files\n*.tmp\n*.log\n\n\n\n\nmain: Production-ready code\ndevelop: Integration branch for new features\nfeature/: Individual feature branches\nhotfix/: Quick fixes for production issues\n\n\n\n\n\nUse conventional commit messages: feat:, fix:, docs:, style:\nCommit frequently with small, focused changes\nTest locally before pushing\nUse pull requests for code review\n\n\n\n\n\n\n\nwebsite:\n  navbar:\n    left:\n      - href: index.qmd\n        text: Home\n      - href: about.qmd\n        text: About\n      - href: presentations.qmd\n        text: Presentations\n      - href: blog.qmd        # New page\n        text: Blog\n      - href: contact.qmd     # New page\n        text: Contact\n\n\n\n\nCreate new .qmd file in slides directory\nUpdate presentations.qmd with new entry\nEnsure modal integration works\nTest responsive design\n\n\n\n\n\nKeep environment-specific settings in separate files\nUse YAML anchors for repeated configurations\nDocument all custom settings\nValidate YAML syntax before committing\n\n\n\n\n\n\n\nstyles/\n├── main.css           # Global styles\n├── components/\n│   ├── buttons.css    # Button styles\n│   ├── cards.css      # Card components\n│   ├── modal.css      # Modal styles\n│   └── navbar.css     # Navigation styles\n├── reveal/\n│   ├── theme.css      # Reveal.js theme\n│   └── custom.css     # Reveal.js customizations\n└── utilities/\n    ├── variables.css  # CSS custom properties\n    └── responsive.css # Media queries\n\n\n\n\nUse CSS custom properties for consistent theming\nFollow BEM methodology for class naming\nKeep specificity low and avoid !important\nUse mobile-first responsive design\nOptimize for performance (minimize unused CSS)\n\n\n\n\n:root {\n  --primary-color: #0055cc;\n  --primary-hover: #003d99;\n  --font-family: 'Inter', sans-serif;\n  --border-radius: 8px;\n  --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);\n}\n\n\n\n\n\n\n# Start development server\nquarto preview\n\n# Build for production\nquarto render\n\n# Check for broken links\nquarto check\n\n# Validate HTML output\n# Use tools like HTML5 validator\n\n\n\n\nAll pages load without errors\nNavigation works correctly\nModal functionality works on all devices\nPresentations render properly\nResponsive design works (mobile, tablet, desktop)\nAll links are functional\nImages load correctly\nPerformance is acceptable\n\n\n\n\n\nTest in Chrome, Firefox, Safari, Edge\nCheck mobile browsers (iOS Safari, Chrome Mobile)\nVerify keyboard navigation works\nTest with screen readers for accessibility\n\n\n\n\n\nOptimize images (WebP format when possible)\nMinimize CSS and JavaScript\nUse CDN for external resources\nEnable compression on server\n\n\n\n\n\n\n\n\nGo to repository Settings → Pages\nSelect source: “Deploy from a branch”\nChoose branch: main or gh-pages\nSelect folder: / (root) or /docs\n\n\n\n\nCreate .github/workflows/quarto-publish.yml:\nname: Render and Publish\n\non:\n  push:\n    branches: [main]\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v4\n        \n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n        \n      - name: Render and Publish\n        uses: quarto-dev/quarto-actions/publish@v2\n        with:\n          target: gh-pages\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n\n\n\nAll assets are properly referenced\nBase URL is configured correctly\nHTTPS is enabled\nCustom domain is set up (if applicable)\nAnalytics tracking is configured\n\n\n\n\n\n\n\n\nUpdate Quarto to latest version monthly\nReview and update dependencies\nCheck for broken external links\nUpdate content and presentations\nMonitor site performance\nReview analytics data\n\n\n\n\n\nKeep presentations current with latest data\nUpdate “About” section with new achievements\nAdd new presentations to the collection\nRefresh homepage content periodically\n\n\n\n\n\nMonitor Quarto release notes\nUpdate Reveal.js when new versions are available\nKeep CSS and JavaScript dependencies current\nTest after each update\n\n\n\n\n\n\n\n\nCheck YAML syntax in _quarto.yml\nVerify all referenced files exist\nCheck for circular dependencies\nReview error logs carefully\n\n\n\n\n\nEnsure JavaScript loads after DOM\nCheck iframe src paths\nVerify CSS z-index values\nTest across different browsers\n\n\n\n\n\nUse browser developer tools\nTest on actual devices\nCheck CSS media queries\nValidate viewport meta tag\n\n\n\n\n\nOptimize large images\nMinimize CSS/JS files\nUse browser caching\nConsider lazy loading for images\n\n\nThis document should be updated as the project evolves and new best practices are discovered."
+  },
+  {
+    "objectID": "BEST_PRACTICES.html#organizing-content-and-slides",
+    "href": "BEST_PRACTICES.html#organizing-content-and-slides",
+    "title": "Best Practices for Maintaining a Quarto Website",
+    "section": "",
+    "text": "project/\n├── _quarto.yml           # Main configuration\n├── index.qmd            # Homepage\n├── about.qmd            # About page\n├── presentations.qmd    # Presentations listing\n├── slides/              # Presentation directory\n│   ├── slides.qmd       # Main presentation\n│   ├── presentation-2.qmd\n│   └── assets/          # Slide-specific assets\n├── assets/              # Global assets\n│   ├── images/\n│   └── data/\n├── styles.css           # Global styles\n├── modal.js            # Modal functionality\n└── _site/              # Generated output (git-ignored)\n\n\n\n\nOne presentation per .qmd file in the slides directory\nUse descriptive filenames: data-visualization-2024.qmd\nKeep slide assets in dedicated subdirectories\nMaintain consistent naming conventions\n\n\n\n\n\nWrite clear, concise slide titles\nLimit bullet points to 5-7 items per slide\nUse consistent formatting across presentations\nInclude speaker notes for complex slides"
+  },
+  {
+    "objectID": "BEST_PRACTICES.html#version-control-with-github",
+    "href": "BEST_PRACTICES.html#version-control-with-github",
+    "title": "Best Practices for Maintaining a Quarto Website",
+    "section": "",
+    "text": "# Initialize repository\ngit init\ngit add .\ngit commit -m \"Initial Quarto website setup\"\n\n# Connect to GitHub\ngit remote add origin https://github.com/username/portfolio.git\ngit push -u origin main\n\n\n\n# Quarto output\n_site/\n/.quarto/\n\n# OS files\n.DS_Store\nThumbs.db\n\n# IDE files\n.vscode/\n.idea/\n\n# Temporary files\n*.tmp\n*.log\n\n\n\n\nmain: Production-ready code\ndevelop: Integration branch for new features\nfeature/: Individual feature branches\nhotfix/: Quick fixes for production issues\n\n\n\n\n\nUse conventional commit messages: feat:, fix:, docs:, style:\nCommit frequently with small, focused changes\nTest locally before pushing\nUse pull requests for code review"
+  },
+  {
+    "objectID": "BEST_PRACTICES.html#updating-_quarto.yml-for-new-pages",
+    "href": "BEST_PRACTICES.html#updating-_quarto.yml-for-new-pages",
+    "title": "Best Practices for Maintaining a Quarto Website",
+    "section": "",
+    "text": "website:\n  navbar:\n    left:\n      - href: index.qmd\n        text: Home\n      - href: about.qmd\n        text: About\n      - href: presentations.qmd\n        text: Presentations\n      - href: blog.qmd        # New page\n        text: Blog\n      - href: contact.qmd     # New page\n        text: Contact\n\n\n\n\nCreate new .qmd file in slides directory\nUpdate presentations.qmd with new entry\nEnsure modal integration works\nTest responsive design\n\n\n\n\n\nKeep environment-specific settings in separate files\nUse YAML anchors for repeated configurations\nDocument all custom settings\nValidate YAML syntax before committing"
+  },
+  {
+    "objectID": "BEST_PRACTICES.html#keeping-css-modular",
+    "href": "BEST_PRACTICES.html#keeping-css-modular",
+    "title": "Best Practices for Maintaining a Quarto Website",
+    "section": "",
+    "text": "styles/\n├── main.css           # Global styles\n├── components/\n│   ├── buttons.css    # Button styles\n│   ├── cards.css      # Card components\n│   ├── modal.css      # Modal styles\n│   └── navbar.css     # Navigation styles\n├── reveal/\n│   ├── theme.css      # Reveal.js theme\n│   └── custom.css     # Reveal.js customizations\n└── utilities/\n    ├── variables.css  # CSS custom properties\n    └── responsive.css # Media queries\n\n\n\n\nUse CSS custom properties for consistent theming\nFollow BEM methodology for class naming\nKeep specificity low and avoid !important\nUse mobile-first responsive design\nOptimize for performance (minimize unused CSS)\n\n\n\n\n:root {\n  --primary-color: #0055cc;\n  --primary-hover: #003d99;\n  --font-family: 'Inter', sans-serif;\n  --border-radius: 8px;\n  --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);\n}"
+  },
+  {
+    "objectID": "BEST_PRACTICES.html#testing-locally-before-deploy",
+    "href": "BEST_PRACTICES.html#testing-locally-before-deploy",
+    "title": "Best Practices for Maintaining a Quarto Website",
+    "section": "",
+    "text": "# Start development server\nquarto preview\n\n# Build for production\nquarto render\n\n# Check for broken links\nquarto check\n\n# Validate HTML output\n# Use tools like HTML5 validator\n\n\n\n\nAll pages load without errors\nNavigation works correctly\nModal functionality works on all devices\nPresentations render properly\nResponsive design works (mobile, tablet, desktop)\nAll links are functional\nImages load correctly\nPerformance is acceptable\n\n\n\n\n\nTest in Chrome, Firefox, Safari, Edge\nCheck mobile browsers (iOS Safari, Chrome Mobile)\nVerify keyboard navigation works\nTest with screen readers for accessibility\n\n\n\n\n\nOptimize images (WebP format when possible)\nMinimize CSS and JavaScript\nUse CDN for external resources\nEnable compression on server"
+  },
+  {
+    "objectID": "BEST_PRACTICES.html#deployment-to-github-pages",
+    "href": "BEST_PRACTICES.html#deployment-to-github-pages",
+    "title": "Best Practices for Maintaining a Quarto Website",
+    "section": "",
+    "text": "Go to repository Settings → Pages\nSelect source: “Deploy from a branch”\nChoose branch: main or gh-pages\nSelect folder: / (root) or /docs\n\n\n\n\nCreate .github/workflows/quarto-publish.yml:\nname: Render and Publish\n\non:\n  push:\n    branches: [main]\n\njobs:\n  build-deploy:\n    runs-on: ubuntu-latest\n    steps:\n      - name: Check out repository\n        uses: actions/checkout@v4\n        \n      - name: Set up Quarto\n        uses: quarto-dev/quarto-actions/setup@v2\n        \n      - name: Render and Publish\n        uses: quarto-dev/quarto-actions/publish@v2\n        with:\n          target: gh-pages\n        env:\n          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}\n\n\n\n\nAll assets are properly referenced\nBase URL is configured correctly\nHTTPS is enabled\nCustom domain is set up (if applicable)\nAnalytics tracking is configured"
+  },
+  {
+    "objectID": "BEST_PRACTICES.html#maintenance-and-updates",
+    "href": "BEST_PRACTICES.html#maintenance-and-updates",
+    "title": "Best Practices for Maintaining a Quarto Website",
+    "section": "",
+    "text": "Update Quarto to latest version monthly\nReview and update dependencies\nCheck for broken external links\nUpdate content and presentations\nMonitor site performance\nReview analytics data\n\n\n\n\n\nKeep presentations current with latest data\nUpdate “About” section with new achievements\nAdd new presentations to the collection\nRefresh homepage content periodically\n\n\n\n\n\nMonitor Quarto release notes\nUpdate Reveal.js when new versions are available\nKeep CSS and JavaScript dependencies current\nTest after each update"
+  },
+  {
+    "objectID": "BEST_PRACTICES.html#troubleshooting-common-issues",
+    "href": "BEST_PRACTICES.html#troubleshooting-common-issues",
+    "title": "Best Practices for Maintaining a Quarto Website",
+    "section": "",
+    "text": "Check YAML syntax in _quarto.yml\nVerify all referenced files exist\nCheck for circular dependencies\nReview error logs carefully\n\n\n\n\n\nEnsure JavaScript loads after DOM\nCheck iframe src paths\nVerify CSS z-index values\nTest across different browsers\n\n\n\n\n\nUse browser developer tools\nTest on actual devices\nCheck CSS media queries\nValidate viewport meta tag\n\n\n\n\n\nOptimize large images\nMinimize CSS/JS files\nUse browser caching\nConsider lazy loading for images\n\n\nThis document should be updated as the project evolves and new best practices are discovered."
+  },
+  {
+    "objectID": "presentations.html",
+    "href": "presentations.html",
+    "title": "Presentations",
+    "section": "",
+    "text": "Explore my collection of professional presentations covering various topics in data science, analytics, and business intelligence. Each presentation is designed to be engaging, informative, and actionable.\n\n\n\n\n\n\n\n📊\n\nFeatured\n\n\n\n\n\n\nDuration: 15 minutes | Level: Intermediate | Topics: Analytics, KPIs, Strategy\nA comprehensive introduction to business analytics, covering key performance indicators, data visualization best practices, and strategic decision-making frameworks. Perfect for stakeholders looking to understand the value of data-driven approaches.\nKey Takeaways: - Understanding business metrics that matter - Building effective dashboards - Translating data into actionable insights - Modern visualization techniques\n\n View Presentation\n\n\n\n\n\n\n\n\nDuration: 20 minutes | Level: Beginner to Intermediate | Topics: Visualization, Design, Communication\nComing Soon - An in-depth look at creating compelling data visualizations that tell a story and drive action. This presentation covers design principles, tool selection, and common pitfalls to avoid.\n\n Coming Soon\n\n\n\n\n\n\nDuration: 25 minutes | Level: Intermediate to Advanced | Topics: ML, AI, Business Applications\nComing Soon - Practical applications of machine learning in business contexts, including use case identification, model selection, and implementation strategies.\n\n Coming Soon\n\n\n\n\n\n\n\n\n\n\nNavigate through slides at your own pace with keyboard controls and click navigation.\n\n\n\n\n\n\n\nPresentations work seamlessly across desktop, tablet, and mobile devices.\n\n\n\n\n\n\n\nClean, modern design with consistent branding and typography.\n\n\n\n\n\n\n\n\n\nKeyboard Controls: Use arrow keys, space bar, or click to navigate\nFullscreen: Press ‘F’ for fullscreen mode\nOverview: Press ‘Esc’ to see slide overview\nSpeaker Notes: Press ‘S’ to open speaker view (if available)\n\n\n\n\nInterested in a presentation on a specific topic? I create custom presentations tailored to your audience and objectives.\n\n\n Contact for Custom Work"
+  },
+  {
+    "objectID": "presentations.html#interactive-presentations",
+    "href": "presentations.html#interactive-presentations",
+    "title": "Presentations",
+    "section": "",
+    "text": "Explore my collection of professional presentations covering various topics in data science, analytics, and business intelligence. Each presentation is designed to be engaging, informative, and actionable.\n\n\n\n\n\n\n\n📊\n\nFeatured\n\n\n\n\n\n\nDuration: 15 minutes | Level: Intermediate | Topics: Analytics, KPIs, Strategy\nA comprehensive introduction to business analytics, covering key performance indicators, data visualization best practices, and strategic decision-making frameworks. Perfect for stakeholders looking to understand the value of data-driven approaches.\nKey Takeaways: - Understanding business metrics that matter - Building effective dashboards - Translating data into actionable insights - Modern visualization techniques\n\n View Presentation\n\n\n\n\n\n\n\n\nDuration: 20 minutes | Level: Beginner to Intermediate | Topics: Visualization, Design, Communication\nComing Soon - An in-depth look at creating compelling data visualizations that tell a story and drive action. This presentation covers design principles, tool selection, and common pitfalls to avoid.\n\n Coming Soon\n\n\n\n\n\n\nDuration: 25 minutes | Level: Intermediate to Advanced | Topics: ML, AI, Business Applications\nComing Soon - Practical applications of machine learning in business contexts, including use case identification, model selection, and implementation strategies.\n\n Coming Soon\n\n\n\n\n\n\n\n\n\n\nNavigate through slides at your own pace with keyboard controls and click navigation.\n\n\n\n\n\n\n\nPresentations work seamlessly across desktop, tablet, and mobile devices.\n\n\n\n\n\n\n\nClean, modern design with consistent branding and typography."
+  },
+  {
+    "objectID": "presentations.html#how-to-navigate",
+    "href": "presentations.html#how-to-navigate",
+    "title": "Presentations",
+    "section": "",
+    "text": "Keyboard Controls: Use arrow keys, space bar, or click to navigate\nFullscreen: Press ‘F’ for fullscreen mode\nOverview: Press ‘Esc’ to see slide overview\nSpeaker Notes: Press ‘S’ to open speaker view (if available)"
+  },
+  {
+    "objectID": "presentations.html#request-a-custom-presentation",
+    "href": "presentations.html#request-a-custom-presentation",
+    "title": "Presentations",
+    "section": "",
+    "text": "Interested in a presentation on a specific topic? I create custom presentations tailored to your audience and objectives.\n\n\n Contact for Custom Work"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Discover insights, presentations, and expertise in data science, analytics, and business intelligence. Explore interactive presentations and learn about my professional journey.\n\n View Sample Presentation"
+  },
+  {
+    "objectID": "index.html#what-youll-find-here",
+    "href": "index.html#what-youll-find-here",
+    "title": "Welcome",
+    "section": "What You’ll Find Here",
+    "text": "What You’ll Find Here\n\n\n\n\n\n📊\n\n\nPresentations\nInteractive slide decks covering various topics in data science, analytics, and business insights.\n\n\n\n\n\n\n\n\n💼\n\n\nProfessional Work\nExamples of projects, case studies, and professional accomplishments.\n\n\n\n\n\n\n\n\n🎯\n\n\nExpertise\nDeep dive into areas of specialization and technical skills."
+  },
+  {
+    "objectID": "index.html#featured-content",
+    "href": "index.html#featured-content",
+    "title": "Welcome",
+    "section": "Featured Content",
+    "text": "Featured Content\n\n\nSample Business Presentation\n\nA comprehensive overview of key business metrics and strategic insights. This presentation demonstrates modern slide design and interactive elements.\n\nView Presentation"
+  },
+  {
+    "objectID": "index.html#get-started",
+    "href": "index.html#get-started",
+    "title": "Welcome",
+    "section": "Get Started",
+    "text": "Get Started\nNavigate through the site using the menu above to explore different sections:\n\nAbout: Learn more about my background and expertise\nPresentations: Browse the complete collection of slide decks\nGitHub: Access the source code and contribute\n\n\nThis portfolio is built with Quarto and features interactive Reveal.js presentations."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Welcome to my professional portfolio. I am a data scientist and analytics professional with expertise in transforming complex data into actionable business insights.\n\n\n\n\n\n\n\n\n\n\nStatistical analysis and modeling\nBusiness intelligence and reporting\nPerformance metrics and KPIs\nPredictive analytics\n\n\n\n\n\n\n\n\n\nPython, R, SQL\nTableau, Power BI\nMachine Learning\nCloud platforms (AWS, Azure)\n\n\n\n\n\n\n\n\n\nStrategic planning\nStakeholder communication\nProject management\nCross-functional collaboration\n\n\n\n\n\n\n\n\n\nCustomer analytics\nFinancial modeling\nOperations optimization\nMarket research\n\n\n\n\n\n\n\n\nI believe in the power of data to drive meaningful business decisions. My approach combines technical expertise with strong business acumen to deliver solutions that not only solve immediate problems but also provide long-term strategic value.\n\n\n\nData-Driven Decision Making: Every recommendation is backed by solid analytical evidence\nClear Communication: Complex insights presented in accessible, actionable formats\nContinuous Learning: Staying current with industry trends and emerging technologies\nCollaborative Approach: Working closely with stakeholders to understand business needs\n\n\n\n\n\nThis section would typically include your educational background, professional certifications, and relevant training.\n\n\n\nFeel free to connect with me to discuss potential collaborations, consulting opportunities, or to learn more about my work.\n\nThis portfolio showcases my commitment to excellence in data science and analytics. Each presentation and project reflects my dedication to delivering high-quality, impactful solutions."
+  },
+  {
+    "objectID": "about.html#professional-background",
+    "href": "about.html#professional-background",
+    "title": "About Me",
+    "section": "",
+    "text": "Welcome to my professional portfolio. I am a data scientist and analytics professional with expertise in transforming complex data into actionable business insights."
+  },
+  {
+    "objectID": "about.html#professional-philosophy",
+    "href": "about.html#professional-philosophy",
+    "title": "About Me",
+    "section": "",
+    "text": "I believe in the power of data to drive meaningful business decisions. My approach combines technical expertise with strong business acumen to deliver solutions that not only solve immediate problems but also provide long-term strategic value.\n\n\n\nData-Driven Decision Making: Every recommendation is backed by solid analytical evidence\nClear Communication: Complex insights presented in accessible, actionable formats\nContinuous Learning: Staying current with industry trends and emerging technologies\nCollaborative Approach: Working closely with stakeholders to understand business needs"
+  },
+  {
+    "objectID": "about.html#education-certifications",
+    "href": "about.html#education-certifications",
+    "title": "About Me",
+    "section": "",
+    "text": "This section would typically include your educational background, professional certifications, and relevant training."
+  },
+  {
+    "objectID": "about.html#contact",
+    "href": "about.html#contact",
+    "title": "About Me",
+    "section": "",
+    "text": "Feel free to connect with me to discuss potential collaborations, consulting opportunities, or to learn more about my work.\n\nThis portfolio showcases my commitment to excellence in data science and analytics. Each presentation and project reflects my dedication to delivering high-quality, impactful solutions."
+  },
+  {
+    "objectID": "slides.html#welcome",
+    "href": "slides.html#welcome",
+    "title": "Business Analytics Overview",
+    "section": "Welcome",
+    "text": "Welcome"
+  },
+  {
+    "objectID": "slides.html#transforming-data-into-strategic-insights",
+    "href": "slides.html#transforming-data-into-strategic-insights",
+    "title": "Business Analytics Overview",
+    "section": "Transforming Data into Strategic Insights",
+    "text": "Transforming Data into Strategic Insights\nA Modern Approach to Data-Driven Decision Making\n\nNavigate with arrow keys, space, or click to continue"
+  },
+  {
+    "objectID": "slides.html#agenda",
+    "href": "slides.html#agenda",
+    "title": "Business Analytics Overview",
+    "section": "Agenda",
+    "text": "Agenda\n\n\n\nThe Analytics Landscape 🌐\n\nCurrent state of business analytics\nKey challenges and opportunities\n\nCore Metrics That Matter 📊\n\nKPIs and performance indicators\nMeasurement frameworks\n\nVisualization Best Practices 🎨\n\nDesign principles\nTool selection\n\nImplementation Strategy 🚀\n\nBuilding analytics capabilities\nChange management\n\nNext Steps & Q&A 💬"
+  },
+  {
+    "objectID": "slides.html#the-analytics-landscape",
+    "href": "slides.html#the-analytics-landscape",
+    "title": "Business Analytics Overview",
+    "section": "The Analytics Landscape",
+    "text": "The Analytics Landscape\n\nCurrent State of Business Analytics\n\n\n🚀 Opportunities - Exponential data growth - Advanced analytics tools & AI - Cloud computing democratization - Real-time insights capability - Predictive analytics maturity\n\n⚠️ Challenges - Data quality & consistency issues - Analytics skill gaps in workforce - Tool fragmentation & complexity - Organizational change resistance - Privacy & compliance concerns\n\n\n\n💡 “Companies that are data-driven are 23x more likely to acquire customers and 6x more likely to retain them.” - McKinsey Global Institute"
+  },
+  {
+    "objectID": "slides.html#key-performance-indicators",
+    "href": "slides.html#key-performance-indicators",
+    "title": "Business Analytics Overview",
+    "section": "Key Performance Indicators",
+    "text": "Key Performance Indicators\n\nThe Metrics That Drive Success 📈\n\n\n\n💰 Financial - Revenue Growth Rate - Customer Acquisition Cost - Customer Lifetime Value - Return on Investment\n\n\n\n⚙️ Operational - Process Efficiency - Quality Scores - Time to Market - Resource Utilization\n\n\n\n👥 Customer - Net Promoter Score - Customer Satisfaction - Churn Rate - Engagement Metrics\n\n\n\n🎯 Focus on metrics that directly impact business outcomes"
+  },
+  {
+    "objectID": "slides.html#data-visualization-excellence",
+    "href": "slides.html#data-visualization-excellence",
+    "title": "Business Analytics Overview",
+    "section": "Data Visualization Excellence",
+    "text": "Data Visualization Excellence\n\nCreating Impactful Visual Stories 📊\n\n\nDesign Principles - 📈 Clarity First: Remove chart junk, focus on data - 🎨 Consistent Colors: Use brand colors strategically - 📱 Mobile-Ready: Responsive charts for all devices - ⚡ Performance: Fast loading, smooth interactions - ♿ Accessible: Color-blind friendly palettes\nTool Selection - Tableau for complex dashboards - Power BI for Microsoft ecosystems - D3.js for custom visualizations - Python/R for statistical graphics\n\n\n📊 Visualization Impact\n85% faster decision making\n70% better data comprehension\n60% increased engagement\n40% reduction in meetings"
+  },
+  {
+    "objectID": "slides.html#thank-you",
+    "href": "slides.html#thank-you",
+    "title": "Business Analytics Overview",
+    "section": "Thank You",
+    "text": "Thank You"
+  },
+  {
+    "objectID": "slides.html#lets-connect-and-transform-your-data",
+    "href": "slides.html#lets-connect-and-transform-your-data",
+    "title": "Business Analytics Overview",
+    "section": "Let’s Connect and Transform Your Data",
+    "text": "Let’s Connect and Transform Your Data\n\nReady to unlock the power of your data?\n📧 Get in Touch Professional consultation available\n🚀 Next Steps Custom analytics solutions\n💼 Portfolio View more case studies\n\n\nThank you for your attention! ✨"
+  }
+]
